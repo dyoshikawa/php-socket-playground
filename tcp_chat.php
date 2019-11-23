@@ -9,9 +9,14 @@ socket_listen($socket, 1);
 echo 'start...';
 while ($remote = socket_accept($socket)) {
     $red = socket_read($remote, 10000);
-    echo 'log: ' . $red;
 
     socket_write($remote, $red);
 }
 
 socket_close($socket);
+
+class MyThread extends Thread {
+    public function run () {
+        sleep(5);
+    }
+}
