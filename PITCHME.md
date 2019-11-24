@@ -90,6 +90,8 @@ https://www.php.net/manual/ja/function.socket-create.php
 
 ## socket_bind
 
+---
+
 ```php
 socket_bind($socket, '0.0.0.0', 8000);
 ```
@@ -106,11 +108,12 @@ https://www.php.net/manual/ja/function.socket-bind.php
 
 ## socket_listen
 
+---
+
 ```php
+// 第2引数は同時接続数の最大値を決める。
 socket_listen($socket, 1);
 ```
-
-第2引数は同時接続数の最大値を決める。
 
 ---
 
@@ -126,9 +129,13 @@ https://www.php.net/manual/ja/function.socket-listen.php
 
 ## socket_accept
 
+---
+
 ```php
 $remote = socket_accept($socket)
 ```
+
+---
 
 https://www.php.net/manual/ja/function.socket-accept.php
 
@@ -154,9 +161,13 @@ https://www.php.net/manual/ja/function.socket-accept.php
 
 ### socket_read
 
+---
+
 ```php
 socket_read($remote, 1000);
 ```
+
+---
 
 https://www.php.net/manual/ja/function.socket-read.php
 
@@ -166,9 +177,13 @@ https://www.php.net/manual/ja/function.socket-read.php
 
 ### socket_read
 
+---
+
 ```php
 socket_write($remote, $msg);
 ```
+
+---
 
 https://www.php.net/manual/ja/function.socket-write.php
 
@@ -178,9 +193,13 @@ https://www.php.net/manual/ja/function.socket-write.php
 
 ### socket_close
 
+---
+
 ```php
 socket_close($socket);
 ```
+
+---
 
 https://www.php.net/manual/ja/function.socket-close.php
 
