@@ -39,11 +39,15 @@ socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
 ```
 
+---
+
 ### AF_INET？
 
 https://www.php.net/manual/ja/function.socket-create.php
 
 > AF_INET	IPv4 インターネットプロトコル。 このプロトコルファミリーに属するプロトコルとしてよく知られているのは、 TCP や UDP です。
+
+---
 
 ### TCPプロトコル+ストリームソケット
 
@@ -52,6 +56,8 @@ https://www.php.net/manual/ja/function.socket-create.php
 > パケット消失や重複を検出し、再要求するなどして回復できる
 
 →信頼性が高い
+
+---
 
 ### UDPプロトコル+データグラムソケット
 
@@ -65,11 +71,15 @@ https://www.php.net/manual/ja/function.socket-create.php
 
 →信頼性をアプリケーション側で担保する必要がある
 
+---
+
 ### したがって
 
 (SOCK_STREAM, SOL_TCP)
 (SOCK_DGRAM, SOL_UDP)
 はそれぞれセットという認識で良さそう。
+
+---
 
 ### 今回は
 
@@ -82,6 +92,8 @@ https://www.php.net/manual/ja/function.socket-create.php
 ```php
 socket_bind($socket, '0.0.0.0', 8000);
 ```
+
+---
 
 https://www.php.net/manual/ja/function.socket-bind.php
 
@@ -98,6 +110,8 @@ socket_listen($socket, 1);
 ```
 
 第2引数は同時接続数の最大値を決める。
+
+---
 
 https://www.php.net/manual/ja/function.socket-listen.php
 
@@ -119,9 +133,13 @@ https://www.php.net/manual/ja/function.socket-accept.php
 
 > この関数は、 このソケットへの接続を許可します
 
+---
+
 ### 返り値
 
 > 成功した場合に新規ソケットリソースを、エラー時に FALSE を返します
+
+---
 
 #### 「新規ソケットリソース」？
 
@@ -130,6 +148,8 @@ https://www.php.net/manual/ja/function.socket-accept.php
 ---
 
 ## socket_read / socket_write / socket_close
+
+---
 
 ### socket_read
 
@@ -141,6 +161,8 @@ https://www.php.net/manual/ja/function.socket-read.php
 
 クライアントから送信されてきたバイトを読み込む。
 
+---
+
 ### socket_read
 
 ```php
@@ -150,6 +172,8 @@ socket_write($remote, $msg);
 https://www.php.net/manual/ja/function.socket-write.php
 
 クライアントへバイトを送信する。
+
+---
 
 ### socket_close
 
@@ -161,13 +185,19 @@ https://www.php.net/manual/ja/function.socket-close.php
 
 ソケットを閉じる。
 
+---
+
 ## echoサーバ
 
 ---?code=tcp_echo.php
 
+---
+
 ## httpサーバ
 
 ---?code=http.php
+
+---
 
 ## チャットサーバ
 
