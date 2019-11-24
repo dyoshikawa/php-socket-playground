@@ -8,6 +8,8 @@ dyoshikawa
 
 - PHPで簡易なechoサーバ、httpサーバ、チャットサーバを作ってみる
 
+---
+
 ## 動機
 
 - ソケットプログラミング勉強中のため。
@@ -177,7 +179,7 @@ https://www.php.net/manual/ja/function.socket-read.php
 
 ---
 
-### socket_read
+### socket_write
 
 ---
 
