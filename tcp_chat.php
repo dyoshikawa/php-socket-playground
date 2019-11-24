@@ -47,7 +47,7 @@ try {
 } finally {
     $thread->join();
     foreach ($remotes as $remote) {
-        socket_close($socket);
+        socket_close($remote);
     }
     socket_close($socket);
 }
