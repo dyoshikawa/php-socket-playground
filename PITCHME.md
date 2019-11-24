@@ -217,6 +217,10 @@ https://www.php.net/manual/ja/function.socket-close.php
 
 ---
 
+tcp_echo.gif
+
+---
+
 ## httpサーバ
 
 ---?code=http.php
