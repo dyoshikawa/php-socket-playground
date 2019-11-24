@@ -75,8 +75,9 @@ https://www.php.net/manual/ja/function.socket-create.php
 
 ### したがって
 
-(SOCK_STREAM, SOL_TCP)
-(SOCK_DGRAM, SOL_UDP)
+- (SOCK_STREAM, SOL_TCP)
+- (SOCK_DGRAM, SOL_UDP)
+
 はそれぞれセットという認識で良さそう。
 
 ---
