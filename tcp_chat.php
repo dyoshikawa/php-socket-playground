@@ -4,10 +4,10 @@ $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
 
 try {
     socket_bind($socket, '0.0.0.0', 8000);
-
     socket_listen($socket, 5);
 
     echo 'start...';
+    /** @var $remotes array */
     $remotes = [];
     echo '1人目を待っています。' . PHP_EOL;
     array_push($remotes, socket_accept($socket));
@@ -19,8 +19,12 @@ try {
 
     $thread = new class($remotes) extends Thread
     {
+        /** @var $remotes array */
         public $remotes;
 
+        /**
+         * @param $remotes array
+         */
         public function __construct($remotes)
         {
             $this->remotes = $remotes;
